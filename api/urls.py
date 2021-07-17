@@ -5,5 +5,6 @@ from . import views
 
 urlpatterns=[
     url('^$', views.index, name='index'),
+    
     url('account/', include('django.contrib.auth.urls')),
 ]
