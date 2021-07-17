@@ -5,6 +5,8 @@ from . import views
 
 urlpatterns=[
     url('^$', views.index, name='index'),
-    
+    url('profile/<str:username>/',views.profile,name='profile'),
+    url('edit/profile/',views.update_profile,name='update'),
+
     url('account/', include('django.contrib.auth.urls')),
 ]
