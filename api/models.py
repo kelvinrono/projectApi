@@ -11,7 +11,8 @@ class Image(models.Model):
     image = CloudinaryField('image')
     # image = models.ImageField(upload_to = 'gallery/', null=True, blank=True)
     name = models.CharField(max_length=30)
-    caption = models.CharField(max_length=30)
+
+
 
     class Meta:
         ordering = ["-pk"]
