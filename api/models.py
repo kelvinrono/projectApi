@@ -9,7 +9,7 @@ from cloudinary.models import CloudinaryField
 class Image(models.Model):
     user = models.ForeignKey('Profile', on_delete=models.CASCADE, related_name='images')
     image = CloudinaryField('image')
-    
+    caption=models.CharField(max_length=50)
     # image = models.ImageField(upload_to = 'gallery/', null=True, blank=True)
     name = models.CharField(null=True, max_length=120)
     url =models.CharField(null=True, max_length=120)

@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class UploadForm(forms.ModelForm):
     class Meta:
         model = Image
-        fields = ('landing page image', 'sitename', 'url', 'description','languages')
+        fields = ('image','caption', 'sitename', 'url', 'description')
 
 class ProfileForm(forms.ModelForm):
     class Meta:
@@ -28,7 +28,7 @@ class CommentForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['comment'].widget = forms.TextInput()
-        self.fields['comment'].widget.attrs['placeholder'] = 'Add a comment...'
+        self.fields['comment'].widget.attrs['placeholder'] = 'Write your review...'
 
     class Meta:
         model = Comment
