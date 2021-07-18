@@ -59,7 +59,13 @@
                     <a href="{% url 'profile' image.user.user.username  %}" class="mt-4 user">
                         <p style="color: black; font-weight: bold;">{{image.user.user.username|title}}</p>
                     </a>
-                    <p class="card-text">{{ image.caption }}</p>
+                   
+                    
+                    <p class="card-text">site name: {{ image.sitename }}</p>
+                    <p class="card-text"><a href="{{ image.sitename }}">visit the site</a></p>
+                    <p class="card-text">description: {{ image.description }}</p> 
+                    <p class="card-text"> Languages used: {{ image.languages }}</p>
+    
                 </div>
             </div>
             {% endfor %}

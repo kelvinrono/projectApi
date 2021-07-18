@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class UploadForm(forms.ModelForm):
     class Meta:
         model = Image
-        fields = ('image','caption', 'sitename', 'url', 'description','languages')
+        fields = ('image', 'sitename', 'url', 'description','languages')
 
 class ProfileForm(forms.ModelForm):
     class Meta:

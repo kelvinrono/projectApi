@@ -9,13 +9,13 @@ from cloudinary.models import CloudinaryField
 class Image(models.Model):
     user = models.ForeignKey('Profile', on_delete=models.CASCADE, related_name='images')
     image = CloudinaryField('image')
+    
     # image = models.ImageField(upload_to = 'gallery/', null=True, blank=True)
-    name = models.CharField(max_length=30)
-    url = models.CharField(max_length=30)
-    sitename = models.CharField(max_length=30)
-    description = models.TextField(max_length=30)
-    languages = models.CharField(max_length=30)
-
+    name = models.CharField(null=True, max_length=120)
+    url =models.CharField(null=True, max_length=120)
+    sitename = models.CharField(null=True, max_length=120)
+    languages = models.CharField(null=True, max_length=120)
+    description = models.CharField(null=True, max_length=120)
 
     class Meta:
         ordering = ["-pk"]
@@ -49,7 +49,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile',null=True)
     photo = CloudinaryField('image') 
     # photo = models.ImageField(upload_to = 'gallery/', null=True, blank=True, default='download.jpeg')
-    bio = models.CharField(max_length=300)
+    bio = models.CharField(max_length=300, null=True)
     name = models.CharField(blank=True, max_length=120)
 
     @receiver(post_save, sender=User)
