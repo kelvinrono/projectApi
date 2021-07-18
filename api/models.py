@@ -11,7 +11,10 @@ class Image(models.Model):
     image = CloudinaryField('image')
     # image = models.ImageField(upload_to = 'gallery/', null=True, blank=True)
     name = models.CharField(max_length=30)
-
+    url = models.CharField(max_length=30)
+    sitename = models.CharField(max_length=30)
+    description = models.TextField(max_length=30)
+    languages = models.CharField(max_length=30)
 
 
     class Meta:
