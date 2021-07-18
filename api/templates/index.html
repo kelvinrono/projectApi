@@ -18,6 +18,11 @@
 <div class="container" style="font-family: 'Forum', cursive;">
     <div class="row">
         <div class="col-7">
+            {% if user.is_authenticated %}
+            <button class="btn btn-outline-primary m-4"><a href="{%url 'post' %}">
+             <b>Post Project</b>
+         </a></button> 
+         {% endif %}
             {% for image in images %}
             <div class="card" style="width: 30rem; margin-top: 20px;">
                 <div class="card-title">
@@ -71,7 +76,7 @@
             {% endfor %}
         </div>
         <div class="col-4" style="margin-top: 20px;">
-            <h4 style="color:inherit">Suggestions for you</h4>
+            <h4 style="color:inherit">Other People's Projects: </h4>
             {% for user in users %}
             <div class="container">
                 <div class="row">
