@@ -19,13 +19,12 @@
                 <img src="{{ image.image.url }}" class="card-img" height="320px" width="100%">
             </div>
             <div class="col-md-3 mt-2">
-         
-
-                <hr style="width:96%">
                 <img src="{{image.user.photo.url}}" class="rounded-circle border ml-3 mt-2  mr-3"
                     alt="{{image.user.user.username}}" width="35" height="35">
                 <a href="{% url 'profile' image.user.user.username %}"
                     class="mt-4 user">{{image.user.user.username | title}}</a>
+
+               
                 <p>{{ image.caption }}</p>
 
                 <hr style="width:96%">
@@ -37,7 +36,7 @@
                     </div>
                 </div>
                 {% empty %}
-                <p class="ml-3">No comments here yet</p>
+                <p class="ml-3">No Reviews here yet</p>
                 {% endfor %}
                 <hr style="width:96%; margin-top:84%;">
                 <form class="form" action="" method="post" novalidate enctype="multipart/form-data">
