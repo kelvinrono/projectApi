@@ -141,4 +141,4 @@ def comment(request, id):
         'form': form,
         'comments':comments,
     }
-    return render(request, 'post.html', params)
+    return render(request, 'project.html', params)

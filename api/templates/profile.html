@@ -55,7 +55,10 @@
                 <div class="card-body">
                     <a href="{% url 'comment' image.id %}"><img src="{{ image.image.url }}" class="card-img-top"
                         alt="..." style="width: 100%;"></a>
-                    <p class="card-text">{{ image.caption }}</p>
+                        <p class="card-text">site name: {{ image.sitename }}</p>
+                        <p class="card-text"><a href="{{ image.sitename }}">visit the site</a></p>
+                        <p class="card-text">description: {{ image.description }}</p> 
+                        <p class="card-text"> Languages used: {{ image.languages }}</p>
 
                 </div>
             </div>
