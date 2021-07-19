@@ -19,6 +19,7 @@ def index(request):
     users = User.objects.exclude(id=request.user.id)
     return render(request,'index.html', {"images":images[::1],"users":users})
 
+
 def post(request):
     if request.method == 'POST':
         form = UploadForm(request.POST,request.FILES)
@@ -35,7 +36,7 @@ def post(request):
 @login_required(login_url='/accounts/login/')
 def profile(request, username):
     images = request.user.profile.images.all()
-    print(images)
+   
     if request.method == 'POST':
         user_form = UpdateUserForm(request.POST, instance=request.user)
         prof_form = UpdateUserProfileForm(request.POST, request.FILES, instance=request.user.profile)

@@ -27,13 +27,9 @@
             <a class="btn btn-sm btn-outline-info mr-3" data-toggle="modal"
                 data-target=".bd-example-modal-md"><strong>Profile settings</strong></a>
 
-            <div class="post-details mt-3 mb-3 btn btn-outline-primary" >
-                <span class="mr-5"><strong>{{images.count}}</strong> Posts</span>
-                <span class="mr-5"> <strong>{{ user.profile.followers.count }}</strong> followers</span>
-                <span class="mr-5"> <strong>{{ user.profile.following.count }}</strong> following</span>
-            </div>
+         
             <!-- <p>{{ user.profile.name }}</p> -->
-            <p style="margin-left: 20px;">{{ user.profile.bio}}</p>
+            <p style="margin-left: 20px;">Bio: {{ user.profile.bio}}</p>
         </div>
     </div>
     <div class="modal fade bd-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"

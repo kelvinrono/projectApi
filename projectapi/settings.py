@@ -155,3 +155,7 @@ api_secret = 'azBC6f5BPkMJRRDqU7RzTlcAFF0'
 ) 
 
 django_heroku.settings(locals())
+
+STAR_RATINGS_RANGE=10
+STAR_RATINGS_STAR_HEIGHT = 20 
+STAR_RATINGS_STAR_WIDTH= 20

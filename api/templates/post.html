@@ -1,14 +1,8 @@
 {%extends 'base.html'%}
 {% load bootstrap4 %}
 {% load static %}
+{% load ratings%}
 
-{% block styles %}
-
-{% bootstrap_css %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
-{% endblock %}
 {% block content %}
 {{ block.super }}
 
@@ -24,35 +18,29 @@
                 <a href="{% url 'profile' image.user.user.username %}"
                     class="mt-4 user">{{image.user.user.username | title}}</a>
 
-               
-                <p>{{ image.caption }}</p>
-
                 <hr style="width:96%">
 
-                {% for comment in comments %}
-                <div>
-                    <div class="ml-2"><strong>{{ comment.user.user.username }}</strong> <span
-                            class="text-secondary">{{ comment.comment }}</span>
-                    </div>
-                </div>
-                {% empty %}
-                <p class="ml-3">No Reviews here yet</p>
-                {% endfor %}
+             
                 <hr style="width:96%; margin-top:84%;">
-                <form class="form" action="" method="post" novalidate enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="row">
-                        <div class="col-md-10">
-                            {% bootstrap_form form layout='block' %}
-                        </div>
-                        <div class="col-md-2 mt-4">
-                            <button type="submit" class="btn btn-sm btn-info"
-                                style="margin-top:10px; margin-left:5px">post</button>
-                        </div>
-                    </div>
-                </form>
+            
             </div>
-            <div class="col-md-1"></div>
+            <div class="mt-2">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h6>Design Rating</h6>
+                    {% ratings image %}
+                  </div>
+                  <div class="col-md-4">
+                    <h6>Usability Rating</h6>
+                    {% ratings image %}
+                  </div>
+                  <div class="col-md-4">
+                    <h6>Content Rating</h6>
+                    {% ratings image %}
+                  </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

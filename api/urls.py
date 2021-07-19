@@ -15,6 +15,6 @@ urlpatterns=[
     path('unfollow/<to_unfollow>', views.unfollow, name='unfollow'),
     path('follow/<to_follow>', views.follow, name='follow'),
     path('image/<id>', views.comment, name='comment'),
-]
+    path(r'ratings/', include('star_ratings.urls', namespace='ratings')),]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

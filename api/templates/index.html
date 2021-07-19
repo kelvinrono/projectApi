@@ -5,8 +5,6 @@
 {% block styles %}
 
 {% bootstrap_css %}
-<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -37,7 +35,9 @@
                             alt="..." height="320px" style="width: 100%;"></a>
                
                     <!-- <span>{{ total_likes }} like{{ total_likes | pluralize}}</span> -->
-                    
+                    <a href="{% url 'comment' image.id %}">
+                        <button class="btn btn-outline-primary m-4">Review</button>
+                    </a>
                     <a href="{% url 'profile' image.user.user.username  %}" class="mt-4 user">
                         <p style="color: black; font-weight: bold;">{{image.user.user.username|title}}</p>
                     </a>
@@ -49,9 +49,6 @@
                     <p class="card-text"> Languages used: {{ image.languages }}</p>
     
                 </div>
-                <a href="{% url 'comment' image.id %}">
-                    <button class="btn btn-outline-primary m-4">Review</button>
-                </a>
             </div>
             {% endfor %}
         </div>
@@ -75,7 +72,5 @@
 
     </div>
 </div>
-
-
 
 {% endblock %}
