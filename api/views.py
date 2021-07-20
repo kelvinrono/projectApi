@@ -13,13 +13,13 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-@login_required(login_url='/accounts/login/')
+
 def index(request):
     images = Image.images()
     users = User.objects.exclude(id=request.user.id)
     return render(request,'index.html', {"images":images[::1],"users":users})
 
-
+@login_required(login_url='/accounts/login/')
 def post(request):
     if request.method == 'POST':
         form = UploadForm(request.POST,request.FILES)
